@@ -1,22 +1,37 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
 
-      <h2>CP Master</h2>
+      {/* Logo */}
+      <Link to="/" className="logo">
+        <span>CP</span> Master
+      </Link>
 
-      <div>
+      {/* Navigation */}
+      <div className="nav-links">
 
-        <Link to="/">Home</Link>
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
 
-        <Link to="/roadmap">Roadmap</Link>
+        <Link to="/roadmap" className="nav-link">
+          Roadmap
+        </Link>
 
-        <Link to="/contest">Contest</Link>
+        <Link to="/contest" className="nav-link">
+          Contest
+        </Link>
 
-        <Link to="/profile">Profile</Link>
+        <Link to="/profile" className="nav-link">
+          Profile
+        </Link>
 
-        <Link to="/login">Login</Link>
+        <Link to="/login" className="login-link">
+          Login
+        </Link>
 
       </div>
 

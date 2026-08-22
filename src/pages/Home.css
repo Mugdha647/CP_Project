@@ -1,0 +1,382 @@
+.home-page {
+  background-color: #f5f7fb;
+  color: #1f2937;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 70px 10%;
+
+  gap: 60px;
+}
+
+
+.hero-content {
+  max-width: 600px;
+}
+
+
+.hero-small-title {
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 15px;
+}
+
+
+.hero h1 {
+  font-size: 52px;
+
+  line-height: 1.1;
+
+  margin: 0 0 20px;
+
+  color: #111827;
+}
+
+
+.hero h1 span {
+  color: #2563eb;
+}
+
+
+.hero-description {
+  color: #64748b;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  max-width: 550px;
+
+  margin-bottom: 30px;
+}
+
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 15px;
+}
+
+
+.primary-button,
+.secondary-button {
+  padding: 12px 22px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+
+.primary-button {
+  background-color: #2563eb;
+
+  color: white;
+}
+
+
+.primary-button:hover {
+  background-color: #1d4ed8;
+}
+
+
+.secondary-button {
+  border: 1px solid #2563eb;
+
+  color: #2563eb;
+
+  background-color: white;
+}
+
+
+.secondary-button:hover {
+  background-color: #eff6ff;
+}
+
+
+/* Code box */
+
+.hero-code {
+  width: 420px;
+}
+
+
+.code-box {
+  background-color: #111827;
+
+  color: #d1d5db;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+  font-family: "Courier New", monospace;
+
+  font-size: 16px;
+
+  line-height: 1.4;
+}
+
+
+.code-box span {
+  color: #60a5fa;
+}
+
+
+.code-indent {
+  margin-left: 25px;
+}
+
+
+.code-indent-2 {
+  margin-left: 50px;
+
+  color: #a7f3d0;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-section {
+  padding: 80px 10%;
+
+  background-color: white;
+}
+
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+
+.section-title p {
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.section-title h2 {
+  font-size: 32px;
+
+  margin-top: 10px;
+
+  color: #111827;
+}
+
+
+.features {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+.feature-card {
+  padding: 30px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background-color: white;
+
+  transition: 0.2s;
+}
+
+
+.feature-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.feature-icon {
+  font-size: 30px;
+
+  margin-bottom: 15px;
+}
+
+
+.feature-card h3 {
+  font-size: 20px;
+
+  margin-bottom: 10px;
+}
+
+
+.feature-card p {
+  color: #64748b;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.feature-card a {
+  color: #2563eb;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey-section {
+  padding: 90px 10%;
+
+  background-color: #eff6ff;
+
+  text-align: center;
+}
+
+
+.journey-content {
+  max-width: 700px;
+
+  margin: auto;
+}
+
+
+.section-label {
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.journey-section h2 {
+  font-size: 36px;
+
+  color: #111827;
+
+  margin: 12px 0 18px;
+}
+
+
+.journey-section p:not(.section-label) {
+  color: #64748b;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 60px 6%;
+  }
+
+
+  .hero-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+
+  .hero-code {
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+
+  .hero-code {
+    width: 100%;
+  }
+
+
+  .features-section {
+    padding: 60px 6%;
+  }
+
+
+  .journey-section {
+    padding: 60px 6%;
+  }
+
+}

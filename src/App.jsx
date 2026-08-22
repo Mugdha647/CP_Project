@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,12 +8,22 @@ import Login from "./pages/Login";
 import Roadmap from "./pages/Roadmap";
 import Contest from "./pages/Contest";
 import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
 
-function App() {
+
+function AppContent() {
+
+  const location = useLocation();
+
+  // Check if current page is login
+  const isLoginPage = location.pathname === "/login" || location.pathname==="/signup";
+
   return (
-    <BrowserRouter>
+    <>
 
-      <Navbar />
+      {/* Don't show Navbar on Login page */}
+      {!isLoginPage && <Navbar />}
+
 
       <Routes>
 
@@ -27,12 +37,29 @@ function App() {
 
         <Route path="/profile" element={<Profile />} />
 
+        <Route path="/signup" element={<Signup />} />
+
       </Routes>
 
-      <Footer />
+
+      {/* Don't show Footer on Login page */}
+      {!isLoginPage && <Footer />}
+
+    </>
+  );
+}
+
+
+function App() {
+
+  return (
+    <BrowserRouter>
+
+      <AppContent />
 
     </BrowserRouter>
   );
 }
+
 
 export default App;
