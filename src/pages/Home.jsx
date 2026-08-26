@@ -182,7 +182,7 @@ function Home() {
           </p>
 
           <Link to="/signup" className="primary-button">
-            Join CP MasterMM
+            Join CP-Master
           </Link>
 
         </div>

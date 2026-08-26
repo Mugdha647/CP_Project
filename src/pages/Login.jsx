@@ -84,7 +84,11 @@ function Login() {
 
       // Go to home
 
-      navigate("/");
+      if(data.user.role=== "admin"){
+        navigate("/admin")
+      }else{
+        navigate("/")
+      }
 
     }
 
