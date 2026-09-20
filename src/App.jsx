@@ -13,61 +13,31 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Roadmap from "./pages/Roadmap";
 import Contest from "./pages/Contest";
+import ContestArena from "./pages/ContestArena";
 import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 
-
 function AppContent() {
-
   const location = useLocation();
 
-
-  // Hide Navbar and Footer
-  // on authentication pages
-
+  // Hide Navbar and Footer on authentication pages or active contest arena
   const isAuthPage =
     location.pathname === "/login" ||
-    location.pathname === "/signup";
-
+    location.pathname === "/signup" ||
+    location.pathname.startsWith("/contest/");
 
   return (
-
     <>
-
       {!isAuthPage && <Navbar />}
 
-
       <Routes>
-
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/signup"
-          element={<Signup />}
-        />
-
-        <Route
-          path="/roadmap"
-          element={<Roadmap />}
-        />
-
-        <Route
-          path="/contest"
-          element={<Contest />}
-        />
-
-        <Route
-          path="/profile"
-          element={<Profile />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/contest" element={<Contest />} />
+        <Route path="/contest/:id" element={<ContestArena />} />
+        <Route path="/profile" element={<Profile />} />
         <Route
           path="/admin"
           element={
@@ -78,29 +48,17 @@ function AppContent() {
         />
       </Routes>
 
-
       {!isAuthPage && <Footer />}
-
     </>
-
   );
-
 }
-
 
 function App() {
-
   return (
-
     <BrowserRouter>
-
       <AppContent />
-
     </BrowserRouter>
-
   );
-
 }
-
 
 export default App;

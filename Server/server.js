@@ -12,60 +12,55 @@ const cors = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes");
+const contestRoutes = require("./routes/contestRoutes");
+const roadmapRoutes = require("./routes/roadmapRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-
 
 // ======================
 // Middleware
 // ======================
-
 app.use(cors());
-
 app.use(express.json());
-
 
 // ======================
 // Routes
 // ======================
-
 app.use("/api/auth", authRoutes);
-
+app.use("/api/contests", contestRoutes);
+app.use("/api/roadmap", roadmapRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Test route
-
 app.get("/", (req, res) => {
   res.json({
     message: "CP Master API is running"
   });
 });
 
-
 // ======================
 // MongoDB
 // ======================
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/cpmaster";
+
+const { seedDatabase } = require("./seedData");
 
 mongoose
-  .connect(process.env.MONGO_URI)
-
-  .then(() => {
-
+  .connect(MONGO_URI)
+  .then(async () => {
     console.log("MongoDB connected successfully!");
-
-    app.listen(process.env.PORT, () => {
-
-      console.log(
-        `Server running at http://localhost:${process.env.PORT}`
-      );
-
+    await seedDatabase();
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
     });
-
   })
-
   .catch((error) => {
-
     console.log("MongoDB connection failed");
-
     console.log(error.message);
-
+    // Still listen for requests so server won't crash if Mongo URI not provided yet
+    app.listen(PORT, () => {
+      console.log(`Server running (without MongoDB) at http://localhost:${PORT}`);
+    });
   });
