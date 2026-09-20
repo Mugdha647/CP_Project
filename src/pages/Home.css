@@ -27,7 +27,7 @@
 
 
 .hero-small-title {
-  color: #2563eb;
+  color: #4b1fde;
 
   font-size: 13px;
 
@@ -140,6 +140,7 @@
   font-size: 16px;
 
   line-height: 1.4;
+  box-shadow: 2px 0px 20px blue;
 }
 
 
@@ -367,6 +368,7 @@
 
   .hero-code {
     width: 100%;
+    border: 2px solid blue;
   }
 
 
