@@ -32,7 +32,9 @@ app.use("/api/contests", contestRoutes);
 app.use("/api/roadmap", roadmapRoutes);
 app.use("/api/admin", adminRoutes);
 
-// Test route
+// ======================
+// Test Route
+// ======================
 app.get("/", (req, res) => {
   res.json({
     message: "CP Master API is running"
@@ -43,15 +45,16 @@ app.get("/", (req, res) => {
 // MongoDB
 // ======================
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/cpmaster";
 
-const { seedDatabase } = require("./seedData");
+const MONGO_URI =
+  process.env.MONGO_URI ||
+  "mongodb://localhost:27017/cpmaster";
 
 mongoose
   .connect(MONGO_URI)
-  .then(async () => {
+  .then(() => {
     console.log("MongoDB connected successfully!");
-    await seedDatabase();
+
     app.listen(PORT, () => {
       console.log(`Server running at http://localhost:${PORT}`);
     });
@@ -59,8 +62,11 @@ mongoose
   .catch((error) => {
     console.log("MongoDB connection failed");
     console.log(error.message);
-    // Still listen for requests so server won't crash if Mongo URI not provided yet
+
+    // Start server even if MongoDB connection fails
     app.listen(PORT, () => {
-      console.log(`Server running (without MongoDB) at http://localhost:${PORT}`);
+      console.log(
+        `Server running (without MongoDB) at http://localhost:${PORT}`
+      );
     });
   });

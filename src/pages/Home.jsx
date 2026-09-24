@@ -5,12 +5,11 @@ function Home() {
   return (
     <div className="home-page">
 
-      {/* Hero Section */}
-      <section className="hero">
+      <section className="mugdha">
+        
+        <div className="mugdha-content">
 
-        <div className="hero-content">
-
-          <p className="hero-small-title">
+          <p className="mugdha-small-title">
             YOUR COMPETITIVE PROGRAMMING JOURNEY
           </p>
 
@@ -19,12 +18,12 @@ function Home() {
             <span> Programming</span>
           </h1>
 
-          <p className="hero-description">
+          <p className="m-description">
             Learn algorithms, practice problems, participate in contests,
-            and improve your problem-solving skills with CP MasterMM.
+            and improve your problem-solving skills with CP Master.
           </p>
 
-          <div className="hero-buttons">
+          <div className="m-buttons">
 
             <Link to="/roadmap" className="primary-button">
               Start Learning
@@ -38,7 +37,7 @@ function Home() {
 
         </div>
 
-        <div className="hero-code">
+        <div className="m-code">
 
           <div className="code-box">
 
@@ -81,7 +80,7 @@ function Home() {
       </section>
 
 
-      {/* Features */}
+      { /* Features */ }
       <section className="features-section">
 
         <div className="section-title">
@@ -175,7 +174,7 @@ function Home() {
           </h2>
 
           <p>
-            CP MasterMM helps you stay consistent with your
+            CP Master helps you stay consistent with your
             competitive programming journey. Follow the roadmap,
             solve problems, participate in contests, and track
             your progress.

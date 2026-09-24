@@ -5,10 +5,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 
-// ====================================
-// SIGNUP
-// ====================================
-
 const signup = async (req, res) => {
 
   try {
