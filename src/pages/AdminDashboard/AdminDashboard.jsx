@@ -13,8 +13,8 @@ const INITIAL_CONTEST_FORM = {
       problemId: "p1",
       title: "Problem A: ",
       statement: "",
-      inputFormat: "Standard Input",
-      outputFormat: "Standard Output",
+      inputFormat: "",
+      outputFormat: "",
       constraints: "1 <= N <= 10^5",
       sampleInput: "",
       sampleOutput: "",
@@ -398,7 +398,7 @@ function AdminDashboard() {
         <div>
           <span className="admin-badge">Admin Portal</span>
           <h1>Admin Dashboard</h1>
-          <p style={{ margin: "5px 0 0", color: "#64748b" }}>
+          <p style={{ margin: "5px 0 0", color: "#841ccf" }}>
             Welcome back, <strong>{user.username}</strong>
           </p>
         </div>
@@ -458,7 +458,7 @@ function AdminDashboard() {
 
           <div className="admin-card-section">
             <h2>Quick Actions</h2>
-            <div style={{ display: "flex", gap: "15px", marginTop: "15px", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "20px", marginTop: "15px", flexWrap: "wrap" }}>
               <button
                 className="btn-create"
                 onClick={() => {
@@ -545,7 +545,7 @@ function AdminDashboard() {
                 <div className="form-group full">
                   <label>Contest Description & Rules</label>
                   <textarea
-                    placeholder="Describe contest topics, rules, and point distribution..."
+                    placeholder="Describe contest topics, rules, and point distribution...."
                     value={contestForm.description}
                     onChange={(e) => setContestForm({ ...contestForm, description: e.target.value })}
                   />
@@ -553,7 +553,7 @@ function AdminDashboard() {
               </div>
 
               {/* Dynamic Problems Builder */}
-              <h4>Contest Problem Set ({contestForm.problems.length} Problems)</h4>
+              <h3>Contest Problem Set ({contestForm.problems.length} Problems)</h3>
               {contestForm.problems.map((prob, idx) => (
                 <div key={idx} className="problem-box-form">
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
@@ -617,7 +617,7 @@ function AdminDashboard() {
                     <div className="form-group">
                       <label>Input Format</label>
                       <textarea
-                        placeholder="Describe the input format..."
+                        placeholder="Input Format"
                         value={prob.inputFormat}
                         onChange={(e) => handleProblemChange(idx, "inputFormat", e.target.value)}
                       />

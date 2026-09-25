@@ -19,7 +19,6 @@ function Login() {
 
 
     try {
-
       const response = await fetch(
         "http://localhost:5000/api/auth/login",
 
@@ -51,9 +50,6 @@ function Login() {
         return;
 
       }
-
-
-      // Save JWT
 
       localStorage.setItem(
         "token",
@@ -169,18 +165,13 @@ function Login() {
             Login
           </button>
 
-
         </form>
 
-
         <p className="signup-text">
-
           Don't have an account?
-
           <Link to="/signup">
             {" "}Sign up
           </Link>
-
         </p>
 
 

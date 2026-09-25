@@ -72,6 +72,7 @@
 
 .primary-button:hover{
   background-color: #0f4bee;
+  transform: translateY(5px);
 }
 
 .secondary-button{
@@ -81,6 +82,7 @@
 }
 .secondary-button:hover{
   background-color: #eff6ff;
+  transform: translateY(5px);
 }
 
 /*Code Box */

@@ -4,7 +4,6 @@ import "./Navbar.css";
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
-
   const user = (() => {
     try {
       return JSON.parse(localStorage.getItem("user"));
@@ -21,9 +20,8 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Logo */}
       <Link to="/" className="logo">
-        <span>CP</span> MASRTER
+        <span>CP</span> MASTER
       </Link>
 
       {/* Navigation */}
@@ -70,7 +68,7 @@ function Navbar() {
           <button
             onClick={handleLogout}
             className="login-link"
-            style={{ border: "none", cursor: "pointer", background: "#374151" }}
+            style={{ border: "none", cursor: "pointer", background: "#374151",fontWeight:"400" }}
           >
             Logout ({user.username})
           </button>

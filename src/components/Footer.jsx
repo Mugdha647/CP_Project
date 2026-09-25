@@ -35,7 +35,7 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2026 CP Master. All rights reserved.
+          © Mugdha-Mamun (2026)_CP Master. All rights reserved.
         </p>
 
       </div>

@@ -57,6 +57,7 @@
 
 .admin-nav-btn:hover {
   color: #2563eb;
+  transform: translateY(-5px);
 }
 
 .admin-nav-btn.active {
@@ -101,7 +102,7 @@
   border-radius: 12px;
   padding: 28px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 15px rgba(207, 37, 37, 0.03);
   margin-bottom: 30px;
 }
 
@@ -130,11 +131,12 @@
   font-weight: 600;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.15s;
+  transition: 0.2s;
 }
 
 .btn-create:hover {
-  background: #1d4ed8;
+  /* background: #1d4ed8; */
+  transform: translateY(-5px);
 }
 
 .btn-danger {

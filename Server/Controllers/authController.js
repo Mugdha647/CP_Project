@@ -4,26 +4,19 @@ const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
 
-
 const signup = async (req, res) => {
 
   try {
-
     const {
       username,
       email,
       password
     } = req.body;
 
-
-    // Check fields
-
     if (!username || !email || !password) {
-
       return res.status(400).json({
         message: "Please fill in all fields"
       });
-
     }
 
 
@@ -120,33 +113,20 @@ const signup = async (req, res) => {
 
 };
 
-
-// ====================================
-// LOGIN
-// ====================================
-
 const login = async (req, res) => {
 
   try {
-
     const {
       email,
       password
     } = req.body;
 
-
-    // Check fields
-
     if (!email || !password) {
-
       return res.status(400).json({
         message: "Please enter email and password"
       });
 
     }
-
-
-    // Find user
 
     const user = await User.findOne({
       email
