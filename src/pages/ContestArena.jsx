@@ -262,7 +262,7 @@ function ContestArena() {
 
   const fetchLeaderboard = useCallback(async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/contests/${id}/leaderboard`);
+      const res = await fetch(`https://cp-project-el4p.onrender.com/api/contests/${id}/leaderboard`);
       if (res.ok) {
         const data = await res.json();
         setLeaderboard(data);
@@ -290,7 +290,7 @@ function ContestArena() {
   useEffect(() => {
     const fetchContest = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/contests/${id}`);
+        const res = await fetch(`https://cp-project-el4p.onrender.com/api/contests/${id}`);
         if (res.ok) {
           const data = await res.json();
           if (data.problems && data.problems.length > 0) {
@@ -378,7 +378,7 @@ function ContestArena() {
     setErrorDetails("");
 
     try {
-      const res = await fetch(`http://localhost:5000/api/contests/${id}/submit`, {
+      const res = await fetch(`https://cp-project-el4p.onrender.com/api/contests/${id}/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Contest.css";
 
 // Default initial fallback contests
+const API_URL = import.meta.env.VITE_API_URL;
 const defaultContests = [
   {
     id: "sample-c1",
@@ -75,7 +76,7 @@ function Contest() {
   const fetchContests = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/contests");
+      const res = await fetch(`${API_URL}/api/contests`);
       if (res.ok) {
         const data = await res.json();
         if (data.length > 0) {
@@ -97,9 +98,9 @@ function Contest() {
   const fetchLeaderboard = useCallback(async (scope) => {
     try {
       setLeaderboardLoading(true);
-      let url = "http://localhost:5000/api/contests/leaderboard/global";
+      let url = "https://cp-project-el4p.onrender.com/api/contests/leaderboard/global";
       if (scope !== "global") {
-        url = `http://localhost:5000/api/contests/${scope}/leaderboard`;
+        url = `https://cp-project-el4p.onrender.com/api/contests/${scope}/leaderboard`;
       }
 
       const res = await fetch(url);
@@ -134,7 +135,7 @@ function Contest() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/contests/${contestId}/register`, {
+      const res = await fetch(`https://cp-project-el4p.onrender.com/api/contests/${contestId}/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

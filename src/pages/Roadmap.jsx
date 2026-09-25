@@ -27,7 +27,7 @@ function Roadmap() {
   useEffect(() => {
     const fetchLatestRoadmap = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/roadmap");
+        const res = await fetch("https://cp-project-el4p.onrender.com/api/roadmap");
         if (res.ok) {
           const data = await res.json();
           if (data && data.length > 0) {

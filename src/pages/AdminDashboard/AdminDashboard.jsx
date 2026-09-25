@@ -64,7 +64,7 @@ function AdminDashboard() {
 
   const fetchStats = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/stats", {
+      const res = await fetch("https://cp-project-el4p.onrender.com/api/admin/stats", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {
@@ -78,7 +78,7 @@ function AdminDashboard() {
 
   const fetchContests = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/contests");
+      const res = await fetch("https://cp-project-el4p.onrender.com/api/contests");
       if (res.ok) {
         const data = await res.json();
         setContests(data);
@@ -90,7 +90,7 @@ function AdminDashboard() {
 
   const fetchRoadmap = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/roadmap");
+      const res = await fetch("https://cp-project-el4p.onrender.com/api/roadmap");
       if (res.ok) {
         const data = await res.json();
         if (data && data.length > 0) {
@@ -113,7 +113,7 @@ function AdminDashboard() {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/users", {
+      const res = await fetch("https://cp-project-el4p.onrender.com/api/admin/users", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {
@@ -201,7 +201,7 @@ function AdminDashboard() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/contests", {
+      const res = await fetch("https://cp-project-el4p.onrender.com/api/contests", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -239,7 +239,7 @@ function AdminDashboard() {
     if (!window.confirm("Are you sure you want to delete this contest?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/contests/${contestId}`, {
+      await fetch(`https://cp-project-el4p.onrender.com/api/contests/${contestId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -259,7 +259,7 @@ function AdminDashboard() {
     localStorage.setItem("cp_custom_roadmap", JSON.stringify(newStagesList));
 
     try {
-      await fetch("http://localhost:5000/api/roadmap/save-all", {
+      await fetch("https://cp-project-el4p.onrender.com/api/roadmap/save-all", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
